@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Private: project photos and screenshots (faces of Fahmi and his teams).
+# Keep them on your own computer only; they are never pushed to GitHub.
+src/assets/projects/
+public/projects/
+
+# Built pages carry every image inside them, so they stay local too
+portfolio-build.html
+backup-before-phone-promo/
+backup-before-ai-head/
+*.mp4
+*.webm
+
+# Certificates are committed only as encrypted .enc files (src/assets/certs/);
+# never commit the original images
+*cert*.webp
+*cert*.jpg
+*cert*.png
+*award*.webp
+*award*.jpg
+*award*.png
+
+# ready-to-upload site (has every photo inside)
+deploy/
