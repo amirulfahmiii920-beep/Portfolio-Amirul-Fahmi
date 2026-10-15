@@ -350,8 +350,8 @@ export const stack: { group: string; items: string[] }[] = [
   { group: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'Dart'] },
   { group: 'Frontend', items: ['React', 'Flutter', 'HTML', 'CSS', 'Three.js'] },
   { group: 'Data & Cloud', items: ['SQL', 'MySQL', 'Firebase', 'Supabase', 'Cloud Firestore', 'AWS'] },
-  { group: 'AI & ML', items: ['YOLOv8/v9', 'Random Forest', 'Decision Tree', 'Roboflow', 'Amazon SageMaker AI', 'Gradio', 'Pydantic'] },
-  { group: 'Generative AI', items: ['OpenAI API', 'Amazon Bedrock', 'Ollama', 'RAG', 'Vector Embeddings', 'AI Agents', 'Prompt Engineering'] },
+  { group: 'AI & ML', items: ['YOLOv8/v9', 'Random Forest', 'Decision Tree', 'Roboflow', 'Amazon SageMaker AI', 'Gradio'] },
+  { group: 'Generative AI', items: ['OpenAI API', 'Amazon Bedrock', 'Ollama', 'RAG', 'Vector Embeddings', 'AI Agents', 'Prompt Engineering', 'Pydantic'] },
   { group: 'Engineering & Networking', items: ['MATLAB', 'Verilog', 'Proteus', 'ECAD', 'Cisco Packet Tracer', 'Wireshark', 'eNSP', 'PuTTY'] },
 ]
 
