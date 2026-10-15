@@ -211,7 +211,7 @@ export function Showcase({ p, onOpen }: { p: Project; onOpen: (i: number) => voi
               <span className="nx-rank" aria-hidden>{i + 1}</span>
               <span className="nx-poster">
                 {sh.src ? <img src={sh.src} alt="" decoding="async" className={sh.frame ? `is-${sh.frame}` : ''} /> : art(i)}
-                {sh.group ? <span className="nx-poster-tag">{sh.group.split(' ')[0]}</span> : null}
+                {sh.group ? <span className="nx-poster-tag">{sh.tag ?? sh.group.split(' ')[0]}</span> : null}
                 <span className="nx-pop">
                   <span className="nx-pop-title">{sh.caption}</span>
                   <span className="nx-pop-meta">{i === active ? 'Now showing' : 'Show this'}</span>

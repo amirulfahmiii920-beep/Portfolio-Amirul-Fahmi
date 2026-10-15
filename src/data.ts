@@ -85,6 +85,19 @@ import ca1 from './assets/projects/clinic-assistant-1.webp'
 import ca2 from './assets/projects/clinic-assistant-2.webp'
 import ca3 from './assets/projects/clinic-assistant-3.webp'
 import ca4 from './assets/projects/clinic-assistant-4.webp'
+import ca5 from './assets/projects/clinic-assistant-5.webp'
+import ca6 from './assets/projects/clinic-assistant-6.webp'
+import ca7 from './assets/projects/clinic-assistant-7.webp'
+import ca8 from './assets/projects/clinic-assistant-8.webp'
+import ca9 from './assets/projects/clinic-assistant-9.webp'
+import ca10 from './assets/projects/clinic-assistant-10.webp'
+import ca11 from './assets/projects/clinic-assistant-11.webp'
+import ca12 from './assets/projects/clinic-assistant-12.webp'
+import ca13 from './assets/projects/clinic-assistant-13.webp'
+import ca14 from './assets/projects/clinic-assistant-14.webp'
+import ca15 from './assets/projects/clinic-assistant-15.webp'
+import ca16 from './assets/projects/clinic-assistant-16.webp'
+import ca17 from './assets/projects/clinic-assistant-17.webp'
 import pf1 from './assets/projects/portfolio-1.jpg'
 import pf2 from './assets/projects/portfolio-2.webp'
 import pf3 from './assets/projects/portfolio-3.webp'
@@ -100,6 +113,8 @@ import pf10mp4 from './assets/projects/portfolio-10.mp4'
 
 /** One slide in a case study's showcase. Without `src` it is a placeholder drawn from the project's art until a picture is added. */
 export type Shot = { src?: string; caption: string; group?: string; about?: string
+  /** short label on the row thumbnail; defaults to the group's first word */
+  tag?: string
   /** show the whole picture, no zoom */
   still?: boolean
   /** still photos only: shrink the photo inside the slide (1 = fit to height) */
@@ -225,10 +240,23 @@ export const projects: Project[] = [
     repo: 'https://github.com/amirulfahmiii920-beep/clinic-procedure-assistant',
     showcase: 'photos',
     shots: [
-      { src: ca1, frame: 'window', file: '127.0.0.1:7860', caption: 'Every answer cites the SOP section it came from', group: 'Answers', about: 'Asked which documents to bring, it answers from SOP-01 sections 2 and 4 and cites both. The panel on the right shows the exact passages the model was given and how closely each one matched the question.' },
-      { src: ca2, frame: 'window', file: '127.0.0.1:7860', caption: 'Follow-up questions keep their context', group: 'Answers', about: '"What if I forgot it?" is searched together with the previous question, so it finds the section on a forgotten identity card and answers from it.' },
-      { src: ca3, frame: 'window', file: '127.0.0.1:7860', caption: 'When the SOPs are silent, it says so', group: 'Guardrails', about: 'No SOP section scored above the relevance cutoff for a question about parking, so instead of guessing it says the SOPs do not cover it and points the patient to the counter.' },
-      { src: ca4, frame: 'window', file: '127.0.0.1:7860', caption: 'Medical questions are refused before any model call', group: 'Guardrails', about: 'A question about medicine for a fever is caught by a scope check before any search or model call. The patient is sent to a doctor or pharmacist, or to the treatment room in an emergency.' },
+      { src: ca1, frame: 'window', file: '127.0.0.1:7860', caption: 'Every answer cites the SOP section it came from', group: 'The product', tag: 'Product', about: 'Asked which documents to bring, it answers from SOP-01 sections 2 and 4 and cites both. The panel on the right shows the exact passages the model was given and how closely each one matched the question.' },
+      { src: ca2, frame: 'window', file: '127.0.0.1:7860', caption: 'Follow-up questions keep their context', group: 'The product', tag: 'Product', about: '"What if I forgot it?" is searched together with the previous question, so it finds the section on a forgotten identity card and answers from it.' },
+      { src: ca3, frame: 'window', file: '127.0.0.1:7860', caption: 'When the SOPs are silent, it says so', group: 'The product', tag: 'Product', about: 'No SOP section scored above the relevance cutoff for a question about parking, so instead of guessing it says the SOPs do not cover it and points the patient to the counter.' },
+      { src: ca4, frame: 'window', file: '127.0.0.1:7860', caption: 'Malay questions are understood and searched in English', group: 'The product', tag: 'Product', about: 'A question in Malay is detected, translated to English for the search and answered from SOP-01, with a note in Malay that the answer is in English because the SOPs are written in English.' },
+      { src: ca5, frame: 'window', file: 'Architecture', diagram: true, caption: 'Twelve checks between a patient\'s question and the answer', group: 'How it works', tag: 'Pipeline', about: 'Each question passes input, privacy and medical checks before any model answers, then retrieval from the SOP index, then citation, output and grounding checks. Any step can stop the request, and every request writes one audit event.' },
+      { src: ca6, frame: 'window', file: '127.0.0.1:7860', caption: 'Medical questions are refused before any model call', group: 'Safety', about: 'A question about medicine for a fever is caught by a keyword guard before any search or model call. The patient is sent to a doctor or pharmacist, or to the treatment room in an emergency.' },
+      { src: ca7, frame: 'window', file: '127.0.0.1:7860', caption: 'A model check catches medical questions with no keyword', group: 'Safety', about: '"What can I take for my headache?" contains no medical keyword, so a few-shot model check catches it instead and refuses it the same way.' },
+      { src: ca8, frame: 'window', file: '127.0.0.1:7860', caption: 'IC numbers are masked before search', group: 'Safety', about: 'An IC number typed into the question is replaced with a placeholder before search, so it never reaches the model, the log or the review queue. The answer still comes from SOP-01.' },
+      { src: ca9, frame: 'window', file: '127.0.0.1:7860', caption: 'Prompt-injection attempts are blocked', group: 'Safety', about: 'A message asking the assistant to ignore its instructions and reveal its system prompt is blocked by the input check before anything else runs.' },
+      { src: ca10, frame: 'window', file: '127.0.0.1:7860', caption: 'The grounding check caught a wrong citation and corrected it', group: 'Safety', about: 'The model cited the registration cut-off section for Friday closing times. The grounding check found the times in the weekday hours section and corrected the citation.' },
+      { src: ca11, frame: 'window', file: 'Review queue', caption: 'Flagged answers go to a staff review queue', group: 'Safety', about: 'Answers that fail the citation, grounding or output checks are queued with the masked question for a person to check. Reviewing two real entries led to the citation repair and to a fix in the number check.' },
+      { src: ca12, frame: 'window', file: 'logs/audit.jsonl', caption: 'Every decision is logged without storing what patients asked', group: 'Safety', about: 'Each request records its status, which check decided, the language, the sections cited and a hash of the question. The question text itself is never stored.' },
+      { src: ca13, frame: 'window', file: 'README.md · Results', caption: 'Tested on 20 questions, 15 rephrasings and three temperatures', group: 'Testing and decisions', tag: 'Testing', about: 'Retrieval found the right section for all 10 original questions. Read by hand, the full assistant gave 15 correct answers, 2 more after citation repair, 3 incomplete and none wrong.' },
+      { src: ca14, frame: 'window', file: 'Terminal', caption: 'Safety checks have their own unit tests', group: 'Testing and decisions', tag: 'Testing', about: 'Masking, the input check, the keyword and output guards and language detection are tested without a model, so they can run on every change.' },
+      { src: ca15, frame: 'window', file: 'README.md · Models', caption: 'Chose the 3B model after testing both: no wrong answers', group: 'Testing and decisions', tag: 'Testing', about: 'On the same ten questions, qwen2.5:3b was fully correct on 8 and wrong on none. The 1.5B model was faster but gave two wrong answers a patient could act on.' },
+      { src: ca16, frame: 'window', file: 'Cost per question', caption: 'Cheap checks run first, so refused questions cost nothing', group: 'Testing and decisions', tag: 'Testing', about: 'Measured from 149 real requests: blocked and keyword-refused questions use no model call and no tokens, while a full answer takes three model calls. On a hosted API, that order is a cost decision as well as a safety one.' },
+      { src: ca17, frame: 'window', file: 'README.md · AWS', caption: 'Each part maps to a managed AWS service', group: 'Testing and decisions', tag: 'Testing', about: 'Ollama maps to Amazon Bedrock, the SOP index to Bedrock Knowledge Bases, the guards to Bedrock Guardrails, the review queue to Amazon A2I and the audit log to CloudWatch and CloudTrail.' },
     ],
   },
   {
