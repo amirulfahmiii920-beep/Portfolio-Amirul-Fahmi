@@ -8,7 +8,7 @@ const lead =
   "I'm a Computer Engineering graduate from Universiti Tun Hussein Onn Malaysia, where I spent three years learning how software behaves when it has to touch hardware, networks, and people who aren't engineers."
 
 const stats = [
-  { n: projects.length, s: '', l: 'Projects shipped across ML, mobile, embedded & web' },
+  { n: projects.length, s: '', l: 'Projects shipped across ML, generative AI, mobile, embedded & web' },
   { n: 2, s: '×', l: 'Gold medals for engineering design' },
   { n: 2, s: '', l: 'Internships keeping live national TV on air' },
   { n: 0, s: '', l: 'Seconds of downtime on live broadcasts' },
