@@ -421,6 +421,26 @@ export const awards = [
     body: 'A programme on AI literacy, productivity and responsible use of AI, covering generative AI in action, prompt engineering, AI governance and ethics, and agentic AI.',
     verify: 'https://pepper-s-site-1c7b.thinkific.com/certificates/xyxsacjmdk',
   },
+  {
+    medal: 'AI',
+    title: 'AI For MY Future',
+    event: 'Microsoft × Pepper Labs',
+    date: 'October 2026',
+    extra: ['AI Basics · Generative AI · Microsoft Copilot', 'Responsible AI · AI Inclusivity'],
+    project: 'Certification',
+    body: 'A Microsoft-backed programme on AI fundamentals and generative AI, including everyday use of Microsoft Copilot and building AI responsibly and inclusively.',
+    verify: 'https://pepper-s-site-1c7b.thinkific.com/certificates/qifjm6ureq',
+  },
+  {
+    medal: 'AI',
+    title: 'AI Ready Malaysia: Education Workforce Edition',
+    event: 'Pepper Labs × AVPN, supported by Google.org and ADB',
+    date: 'October 2026',
+    extra: ['10 learning hours'],
+    project: 'Certification',
+    body: 'The education workforce track of AI Ready Malaysia, on applying AI productively and responsibly, from generative AI and prompt engineering to governance, ethics and agentic AI.',
+    verify: 'https://pepper-s-site-1c7b.thinkific.com/certificates/kdvj1nxb3b',
+  },
 ]
 
 export const links = {
