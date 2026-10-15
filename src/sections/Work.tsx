@@ -77,7 +77,7 @@ export function Work() {
         title="Selected Work"
         aside={
           <p>
-            Seven projects across machine learning, mobile, embedded systems and the web. Some started as coursework, none stayed that way.{' '}
+            Eight projects across machine learning, generative AI, mobile, embedded systems and the web. Some started as coursework, none stayed that way.{' '}
             <a href={links.github} target="_blank" rel="noreferrer" className="u-link">All of it is on GitHub ↗</a>
           </p>
         }

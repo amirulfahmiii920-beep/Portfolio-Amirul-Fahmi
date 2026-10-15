@@ -164,6 +164,21 @@ function motif(m: Project['motif']) {
           })}
         </>
       )
+    case 'sop':
+      return (
+        <>
+          <rect x="120" y="50" width="160" height="200" rx="6" />
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+            <line key={i} x1="140" y1={96 + i * 20} x2={i % 3 === 2 ? 220 : 260} y2={96 + i * 20} opacity=".45" />
+          ))}
+          <rect className="cite-mark" x="134" y="128" width="132" height="16" rx="2" fill="#ecebe6" stroke="none" />
+          <text x="140" y="76" className="art-mini" fill="#ecebe6" stroke="none">SOP-01</text>
+          <g className="cite-chip">
+            <rect x="250" y="150" width="96" height="24" rx="12" fill="#0b0b0c" />
+            <text x="262" y="166" className="art-mini" fill="#ecebe6" stroke="none">SOURCE §2</text>
+          </g>
+        </>
+      )
     case 'tree':
       return (
         <>

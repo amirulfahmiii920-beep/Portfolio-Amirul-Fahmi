@@ -81,13 +81,17 @@ import pb9 from './assets/projects/phonebook-9.jpg'
 import pb10 from './assets/projects/phonebook-10.jpg'
 import pb11 from './assets/projects/phonebook-11.jpg'
 import pb12 from './assets/projects/phonebook-12.jpg'
+import ca1 from './assets/projects/clinic-assistant-1.webp'
+import ca2 from './assets/projects/clinic-assistant-2.webp'
+import ca3 from './assets/projects/clinic-assistant-3.webp'
+import ca4 from './assets/projects/clinic-assistant-4.webp'
 import pf1 from './assets/projects/portfolio-1.jpg'
-import pf2 from './assets/projects/portfolio-2.png'
-import pf3 from './assets/projects/portfolio-3.png'
+import pf2 from './assets/projects/portfolio-2.webp'
+import pf3 from './assets/projects/portfolio-3.webp'
 import pf4 from './assets/projects/portfolio-4.jpg'
 import pf5 from './assets/projects/portfolio-5.jpg'
 import pf5mp4 from './assets/projects/portfolio-5.mp4'
-import pf6 from './assets/projects/portfolio-6.png'
+import pf6 from './assets/projects/portfolio-6.webp'
 import pf7 from './assets/projects/portfolio-7.jpg'
 import pf8 from './assets/projects/portfolio-8.png'
 import pf9 from './assets/projects/portfolio-9.jpg'
@@ -131,7 +135,9 @@ export type Project = {
   shots?: Shot[]
   /** 'photos' shows the pictures full-bleed with landscape posters; the default suits phone screenshots. */
   showcase?: 'screens' | 'photos'
-  motif: 'queue' | 'leaf' | 'scan' | 'orbit' | 'check' | 'grid' | 'tree'
+  motif: 'queue' | 'leaf' | 'scan' | 'orbit' | 'check' | 'grid' | 'tree' | 'sop'
+  /** the project's own repository; the case study falls back to the GitHub profile */
+  repo?: string
 }
 
 export const projects: Project[] = [
@@ -206,6 +212,27 @@ export const projects: Project[] = [
   },
   {
     no: '03',
+    title: 'Clinic Procedure Assistant',
+    short: 'Clinic Assistant',
+    tags: ['Python', 'Ollama', 'RAG', 'Gradio'],
+    oneLiner: "It answers from the clinic's own rules, and says so when it can't.",
+    body:
+      "Patients ask the counter the same questions every day, and the answers already sit in the clinic's SOPs. General chatbots guess. This assistant retrieves the relevant SOP section, answers only from it and cites it. If the SOPs do not cover a question it says so, and medical questions are refused before any model call. It runs on a laptop through Ollama, so no question leaves the machine. I tested two local models on the same ten questions and kept qwen2.5:3b: 8 of 10 fully correct when checked by hand and none wrong, against two wrong answers from the 1.5b model.",
+    year: '2026',
+    role: 'Personal project',
+    hue: 95,
+    motif: 'sop',
+    repo: 'https://github.com/amirulfahmiii920-beep/clinic-procedure-assistant',
+    showcase: 'photos',
+    shots: [
+      { src: ca1, frame: 'window', file: '127.0.0.1:7860', caption: 'Every answer cites the SOP section it came from', group: 'Answers', about: 'Asked which documents to bring, it answers from SOP-01 sections 2 and 4 and cites both. The panel on the right shows the exact passages the model was given and how closely each one matched the question.' },
+      { src: ca2, frame: 'window', file: '127.0.0.1:7860', caption: 'Follow-up questions keep their context', group: 'Answers', about: '"What if I forgot it?" is searched together with the previous question, so it finds the section on a forgotten identity card and answers from it.' },
+      { src: ca3, frame: 'window', file: '127.0.0.1:7860', caption: 'When the SOPs are silent, it says so', group: 'Guardrails', about: 'No SOP section scored above the relevance cutoff for a question about parking, so instead of guessing it says the SOPs do not cover it and points the patient to the counter.' },
+      { src: ca4, frame: 'window', file: '127.0.0.1:7860', caption: 'Medical questions are refused before any model call', group: 'Guardrails', about: 'A question about medicine for a fever is caught by a scope check before any search or model call. The patient is sent to a doctor or pharmacist, or to the treatment room in an emergency.' },
+    ],
+  },
+  {
+    no: '04',
     title: 'Real-Time Object Detection',
     short: 'Object Detection',
     tags: ['YOLO', 'Python', 'Roboflow', 'Computer Vision'],
@@ -232,7 +259,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    no: '04',
+    no: '05',
     title: 'This Portfolio',
     short: 'Portfolio',
     tags: ['React', 'TypeScript', 'Three.js', 'GSAP'],
@@ -258,7 +285,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    no: '05',
+    no: '06',
     title: 'Workstation Safety Checklist',
     short: 'Safety Checklist',
     tags: ['Flutter', 'Dart', 'Android Studio', 'Firestore'],
@@ -285,7 +312,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    no: '06',
+    no: '07',
     title: 'Staff Calendar Management System',
     short: 'Staff Calendar',
     tags: ['JavaScript', 'HTML & CSS', 'Supabase', 'EmailJS'],
@@ -314,7 +341,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    no: '07',
+    no: '08',
     title: 'Phonebook: BST and Hash Map',
     short: 'Phonebook',
     tags: ['C++', 'Binary Search Tree', 'Hash Map', 'Data Structures'],

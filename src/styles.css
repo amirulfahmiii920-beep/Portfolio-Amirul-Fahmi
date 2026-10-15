@@ -319,6 +319,9 @@ html.has-cursor .cursor-ring { display: grid; }
 .cell.hot { fill: #ecebe6; opacity: 0.9; animation: pulse 2.4s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: 0.3; } }
 .node { animation: pulse 2.4s ease-in-out infinite; }
+.cite-mark { opacity: 0.25; transform-box: fill-box; transform-origin: left center; animation: cite 4s var(--ease) infinite; }
+@keyframes cite { 0% { transform: scaleX(0); } 35%, 100% { transform: scaleX(1); } }
+.cite-chip { animation: pulse 2.4s ease-in-out infinite; }
 
 /* streaming-style showcase */
 .pp-hero.pp-hero-sc { aspect-ratio: auto; height: auto; min-height: max(640px, min(94vh, 900px)); display: flex; background: #070708; }

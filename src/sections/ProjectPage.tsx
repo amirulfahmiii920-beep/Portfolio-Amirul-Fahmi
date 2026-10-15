@@ -37,7 +37,7 @@ export function ProjectPage({ index, onClose, onNext }: { index: number; onClose
   return createPortal(
     <div className="pp" ref={root} data-lenis-prevent role="dialog" aria-modal="true" aria-label={p.title}>
       <div className="pp-top">
-        <span className="mono">Case {p.no} / 07</span>
+        <span className="mono">Case {p.no} / {String(projects.length).padStart(2, '0')}</span>
         <Magnetic intensity={0.4} range={90}>
           <button className="pp-close" onClick={onClose} data-cursor="hide" aria-label="Close project">
             <span>Close</span><i />
@@ -61,7 +61,7 @@ export function ProjectPage({ index, onClose, onNext }: { index: number; onClose
       <div className="pp-body">
         <p className="pp-oneliner serif">“{p.oneLiner}”</p>
         <p className="pp-text">{p.body}</p>
-        <a className="u-link mono" href={links.github} target="_blank" rel="noreferrer">View on GitHub ↗</a>
+        <a className="u-link mono" href={p.repo ?? links.github} target="_blank" rel="noreferrer">View on GitHub ↗</a>
       </div>
 
       {lb !== null ? <Lightbox wide={p.showcase === 'photos'} shots={pics(p)} index={lb} onIndex={setLb} onClose={() => setLb(null)} /> : null}
