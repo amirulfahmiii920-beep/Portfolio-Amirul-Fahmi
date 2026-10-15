@@ -411,6 +411,16 @@ export const awards = [
     body: 'Completed the AWS Academy Generative AI Foundations course, with a digital badge issued and verified through Credly.',
     verify: 'https://www.credly.com/badges/82559024-aa60-4380-9313-5ca07e536b7a',
   },
+  {
+    medal: 'AI',
+    title: 'AI Ready Malaysia: Student Edition',
+    event: 'Pepper Labs × AVPN, supported by Google.org and ADB',
+    date: 'October 2026',
+    extra: ['10 learning hours'],
+    project: 'Certification',
+    body: 'A programme on AI literacy, productivity and responsible use of AI, covering generative AI in action, prompt engineering, AI governance and ethics, and agentic AI.',
+    verify: 'https://pepper-s-site-1c7b.thinkific.com/certificates/xyxsacjmdk',
+  },
 ]
 
 export const links = {

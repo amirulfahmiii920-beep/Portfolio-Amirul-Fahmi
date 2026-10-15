@@ -47,7 +47,7 @@ export function Awards() {
                 {a.verify ? (
                   <a className="award-cert award-verify" href={a.verify} target="_blank" rel="noreferrer" data-cursor="link">
                     <svg viewBox="0 0 24 24" aria-hidden><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /><path d="m8.5 12 2.4 2.4 4.6-4.8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    <span>Verify on Credly</span>
+                    <span>Verify online</span>
                     <i aria-hidden>↗</i>
                   </a>
                 ) : null}
