@@ -662,6 +662,9 @@ html.has-cursor .cursor-ring { display: grid; }
 .award-cert i { font-style: normal; transition: transform 0.35s var(--ease); }
 .award-cert:hover { background: var(--gold); color: #141210; }
 .award-cert:hover i { transform: translateX(4px); }
+.award-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.award-actions .award-cert { margin-top: 0; }
+.award-verify:hover i { transform: translate(3px, -3px); }
 
 /* certificate viewer */
 .cv { position: fixed; inset: 0; z-index: 170; background: rgba(8, 8, 9, 0.94); backdrop-filter: blur(14px); color: var(--bone); display: grid; place-items: center; padding: 92px 0 20px; box-sizing: border-box; touch-action: pan-y; }
@@ -728,3 +731,6 @@ html.has-cursor .cursor-ring { display: grid; }
   .hero-content, .hero-meta { visibility: visible; }
   .grain { display: none; }
 }
+
+/* "CERTIFICATIONS" is the longest title word; let it shrink with the phone width */
+@media (max-width: 700px) { .awards .section-title { font-size: 11vw; } }

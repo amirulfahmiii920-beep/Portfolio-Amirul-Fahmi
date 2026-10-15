@@ -387,6 +387,7 @@ export const awards = [
     date: 'June 2026',
     extra: [] as string[],
     project: 'Hospital Queue Management System',
+    verify: undefined as string | undefined,
     body:
       'An Android application built in Flutter, backed by a Supabase database and a Random Forest regression model that predicts patient waiting times in government clinics.',
   },
@@ -399,6 +400,16 @@ export const awards = [
     project: 'AI-Integrated Smart Irrigation',
     body:
       'An IoT irrigation prototype running on an ESP32, automating watering from soil moisture readings and using a Decision Tree model to anticipate local weather.',
+  },
+  {
+    medal: 'AWS',
+    title: 'Generative AI Foundations',
+    event: 'AWS Academy Graduate · Training Badge',
+    date: 'October 2026',
+    extra: ['12 course hours'],
+    project: 'Certification',
+    body: 'Completed the AWS Academy Generative AI Foundations course, with a digital badge issued and verified through Credly.',
+    verify: 'https://www.credly.com/badges/82559024-aa60-4380-9313-5ca07e536b7a',
   },
 ]
 
