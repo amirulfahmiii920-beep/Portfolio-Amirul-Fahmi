@@ -18,5 +18,8 @@ Project photos and screenshots in `src/assets/projects/` are **not in the repo**
 because they show Fahmi's and his teammates' faces. Keep a copy of that folder on your own computer
 (or a private drive) and put it back in `src/assets/projects/` before running `npm run build`.
 
+The resume PDF in `src/assets/resume/` is also **not in the repo**, because it has a phone number and
+address. Put `Amirul_Fahmi_Resume.pdf` back in that folder before building.
+
 Award certificates are committed only as encrypted files (`src/assets/certs/*.enc`) and are decrypted
 in the browser when a visitor opens them.

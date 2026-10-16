@@ -46,3 +46,6 @@ backup-before-ai-head/
 
 # ready-to-upload site (has every photo inside)
 deploy/
+
+# resume has a phone number and address
+src/assets/resume/
